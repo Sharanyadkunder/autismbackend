@@ -1,9 +1,9 @@
 from flask import Flask, request, jsonify, render_template
 import joblib
 import numpy as np
-
+from flask_cors import CORS 
 app = Flask(__name__)
-
+CORS(app)
 model = joblib.load('autism_ensemble_model.pkl')
 
 selected_features = ['A1', 'A3', 'A5', 'A7', 'A9'] 
