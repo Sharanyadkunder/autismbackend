@@ -23,7 +23,7 @@ def predict():
         
         prediction = model.predict(input_array)
         print(prediction)
-        result = 'Positive' if prediction[0] == 1 else 'Negative'
+        result = 'Negative' if prediction[0] == 1 else 'Positive'
         
         return jsonify({'prediction': result})
     except Exception as e:
